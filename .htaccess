@@ -1,0 +1,6 @@
+#Permite la reescritura de reglas en el servidor apache
+RewriteEngine On
+#Prohibir el acceso por URL a otras carpetas
+Options All -Indexes
+#En la URL puedo escribir letras minusculas, mayusculas, numeros, letra "ñ". Despues de la url va a venir "views y los caracteres habilitados" tambien con esta linea, puedo pasar parametros en la URL y que el navegador no piense que es una carpeta no encontrada
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1
